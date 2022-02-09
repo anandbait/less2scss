@@ -130,6 +130,7 @@ const replaceLess = file => {
         .replace(/\$(import|charset|media|font-face|page[\s:]|-ms-viewport|keyframes|-webkit-keyframes|-moz-keyframes|-o-keyframes|-moz-document)/g, '@$1')
         .replace(/\$\{/g, '#{$')
         .replace(/~("[^"]+")/g, 'unquote($1)')
+        .replace(/~('[^']+')/g, 'unquote($1)')
         .replace(/&:extend\((.*?)\)/g, "@extend $1")
         .replace(/@extend\s*(.*?)\s*?all;/g, "@extend $1;")
         .replace(/([\W])spin\(/g, '$1adjust-hue(')
